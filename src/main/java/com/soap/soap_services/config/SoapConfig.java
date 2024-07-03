@@ -1,4 +1,4 @@
-package com.soap.soap_services;
+package com.soap.soap_services.config;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -25,7 +25,7 @@ public class SoapConfig {
     @Bean
     public Jaxb2Marshaller marshaller() {
         Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
-        marshaller.setContextPath("com.example.soap");
+        marshaller.setContextPath("com.soap.soap_services");
         return marshaller;
     }
 
@@ -34,8 +34,8 @@ public class SoapConfig {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
         wsdl11Definition.setPortTypeName("MyPort");
         wsdl11Definition.setLocationUri("/ws");
-        wsdl11Definition.setTargetNamespace("http://soap.com/soap");
-        wsdl11Definition.setSchema(new ClassPathResource("wsdl/my-service.xsd"));
+        wsdl11Definition.setTargetNamespace("http://example.com/soap");
+        wsdl11Definition.setSchema(new ClassPathResource("wsdl/my-service.wsdl"));
         return wsdl11Definition;
     }
 }

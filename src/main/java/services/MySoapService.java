@@ -1,9 +1,9 @@
-package com.soap.soap.service;
+package com.soap.soap_services.services;
 
 import org.springframework.stereotype.Service;
 
-import com.example.soap.MyRequest;
-import com.example.soap.MyResponse;
+import com.soap.soap_services.MyRequest;
+import com.soap.soap_services.MyResponse;
 
 @Service
 public class MySoapService {
@@ -14,3 +14,4 @@ public class MySoapService {
         return response;
     }
 }
+
