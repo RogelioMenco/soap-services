@@ -1,7 +1,6 @@
 package com.soap.soap_services.services;
 
 import org.springframework.stereotype.Service;
-
 import com.soap.soap_services.MyRequest;
 import com.soap.soap_services.MyResponse;
 

@@ -15,15 +15,17 @@ SOAP to SOAP service template using Spring Boot
 - [Tech Stack](#tech-stack)
 - [Prerequisites](#prerequisites)
 - [Setup and Running](#setup-and-running)
-  - [Navigate within the project directory](#navigate-within-the-project-directory)
-  - [Build the project](#build-the-project)
-  - [Running the server](#running-the-server)
-  - [Running with Docker](#running-with-docker)
-  - [Deploying to AKS](#deploying-to-aks)
+    - [Navigate within the project directory](#navigate-within-the-project-directory)
+    - [Build the project](#build-the-project)
+    - [Running the server](#running-the-server)
+    - [Running with Docker](#running-with-docker)
+    - [Deploying to AKS](#deploying-to-aks)
 
 ## Overview
 
-This is a template for creating a SOAP to SOAP service using Spring Boot. It includes a set of pre-configured tools and libraries to help you get started quickly with best practices and a scalable project structure. The template is designed to be easy to customize and extend for various types of projects.
+This is a template for creating a SOAP to SOAP service using Spring Boot. It includes a set of pre-configured tools and
+libraries to help you get started quickly with best practices and a scalable project structure. The template is designed
+to be easy to customize and extend for various types of projects.
 
 ## Tech Stack
 
@@ -41,5 +43,6 @@ This is a template for creating a SOAP to SOAP service using Spring Boot. It inc
 ## Setup and Running
 
 ### Navigate within the project directory
+
 ```sh
 cd soap-service
