@@ -31,12 +31,12 @@ to be easy to customize and extend for various types of projects.
 
 - **Server:** Spring Boot
 - **Build Tool:** Maven
-- **Programming Language:** Java 11
+- **Programming Language:** Java 22
 - **Containerization:** Docker
 
 ## Prerequisites
 
-- Java (>= 11) [Java 11 JDK](https://openjdk.java.net/projects/jdk/11/)
+- Java (>= 17) [Java 22 JDK](https://openjdk.java.net/projects/jdk/22/)
 - Maven (>= 3.6.0) [Maven](https://maven.apache.org/download.cgi)
 - Docker (>= 20.10.7) [Docker](https://www.docker.com/get-docker)
 
@@ -46,3 +46,4 @@ to be easy to customize and extend for various types of projects.
 
 ```sh
 cd soap-service
+mvn clean install

@@ -1,4 +1,4 @@
-package com.soap.soap_services;
+package com.soap;
 
 import java.io.Serializable;
 

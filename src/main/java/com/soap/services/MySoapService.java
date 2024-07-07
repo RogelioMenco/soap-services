@@ -1,4 +1,4 @@
-package com.soap.soap_services.services;
+package com.soap.services;
 
 import org.springframework.stereotype.Service;
 import com.soap.soap_services.MyRequest;
