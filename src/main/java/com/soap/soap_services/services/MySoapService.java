@@ -8,8 +8,7 @@ import org.springframework.stereotype.Service;
 public class MySoapService {
 
 	public MyResponse processRequest(MyRequest request) {
-		MyResponse response = new MyResponse();
-		response.setMessage("Hello, " + request.getName());
-		return response;
+		String message = "Hello, " + request.getName();
+		return new MyResponse(message);
 	}
 }

@@ -1,0 +1,51 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://example.com/soap"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             targetNamespace="http://example.com/soap">
+    <types>
+        <xsd:schema targetNamespace="http://example.com/soap">
+            <xsd:element name="MyRequest" type="tns:MyRequest"/>
+            <xsd:element name="MyResponse" type="tns:MyResponse"/>
+            <xsd:complexType name="MyRequest">
+                <xsd:sequence>
+                    <xsd:element name="name" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="MyResponse">
+                <xsd:sequence>
+                    <xsd:element name="message" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </types>
+    <message name="MyRequest">
+        <part name="parameters" element="tns:MyRequest"/>
+    </message>
+    <message name="MyResponse">
+        <part name="parameters" element="tns:MyResponse"/>
+    </message>
+    <portType name="MyPortType">
+        <operation name="MyOperation">
+            <input message="tns:MyRequest"/>
+            <output message="tns:MyResponse"/>
+        </operation>
+    </portType>
+    <binding name="MyBinding" type="tns:MyPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="MyOperation">
+            <soap:operation soapAction="http://example.com/soap/MyOperation"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="MyService">
+        <port name="MyPort" binding="tns:MyBinding">
+            <soap:address location="http://localhost:8080/ws"/>
+        </port>
+    </service>
+</definitions>
