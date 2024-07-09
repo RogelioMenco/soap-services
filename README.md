@@ -7,19 +7,21 @@
 
 SOAP to SOAP service template using Spring Boot
 
-- **Project Status:** In early development.
-
 ## Table of Contents
 
 - [Overview](#overview)
 - [Tech Stack](#tech-stack)
 - [Prerequisites](#prerequisites)
-- [Setup and Running](#setup-and-running)
-    - [Navigate within the project directory](#navigate-within-the-project-directory)
-    - [Build the project](#build-the-project)
-    - [Running the server](#running-the-server)
-    - [Running with Docker](#running-with-docker)
-    - [Deploying to AKS](#deploying-to-aks)
+- [Getting Started](#getting-started)
+    - [Setup](#setup)
+- [Project Modules](#project-modules)
+    - [Client](#client)
+    - [Config](#config)
+    - [Endpoint](#endpoint)
+    - [Model](#model)
+    - [Services](#services)
+    - [WSDL](#wsdl)
+- [Project Structure](#project-structure)
 
 ## Overview
 
@@ -31,19 +33,96 @@ to be easy to customize and extend for various types of projects.
 
 - **Server:** Spring Boot
 - **Build Tool:** Maven
-- **Programming Language:** Java 22
+- **Programming Language:** Java 17
 - **Containerization:** Docker
 
 ## Prerequisites
 
-- Java (>= 17) [Java 22 JDK](https://openjdk.java.net/projects/jdk/22/)
+- Java (>= 17) [Java 17 JDK](https://openjdk.java.net/projects/jdk/17)
 - Maven (>= 3.6.0) [Maven](https://maven.apache.org/download.cgi)
-- Docker (>= 20.10.7) [Docker](https://www.docker.com/get-docker)
 
-## Setup and Running
 
-### Navigate within the project directory
+## Getting Started
+### Setup
 
-```sh
-cd soap-service
-mvn clean install
+1. Clone the repository:
+    ```bash
+    git clone <repository_url>
+    cd soap-services
+    ```
+
+2. Build the project:
+    ```bash
+    mvn clean install
+    ```
+
+3. Run the application:
+    ```bash
+    mvn spring-boot:run
+    ```
+
+## Project Modules
+
+### Client
+Contains the client configuration to call external services.
+
+### Config
+Includes the configuration classes for the SOAP service.
+
+### Endpoint
+Houses the endpoint definitions for the SOAP service.
+
+### Model
+Contains the data models used in the application.
+
+### Services
+Includes the service classes with the business logic.
+
+### WSDL
+Contains the WSDL files defining the SOAP services.
+
+
+
+## Project Structure
+
+```plaintext
+soap-services/
+├── .git/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── soap/
+│   │   │           └── soap_services/
+│   │   │               ├── client/
+│   │   │               │   └── RealtimeClient.java
+│   │   │               ├── config/
+│   │   │               │   ├── MyRequest.java
+│   │   │               │   ├── MyResponse.java
+│   │   │               │   └── SoapConfig.java
+│   │   │               ├── endpoint/
+│   │   │               │   └── MySoapEndpoint.java
+│   │   │               ├── model/
+│   │   │               │   └── SubmitRequest.java
+│   │   │               ├── services/
+│   │   │               │   ├── MySoapService.java
+│   │   │               │   └── RealtimeService.java
+│   │   │               └── submitrequestresponse/
+│   │   │                   └── SubmitRequestResponse.java
+│   │   └── resources/
+│   │       ├── wsdl/
+│   │       │   ├── my-service.wsdl
+│   │       │   └── realtime.wsdl
+│   │       └── application.properties
+│   └── test/
+│       └── java/
+│           └── com/
+│               └── soap/
+│                   └── soap_services/
+│                       └── SoapServicesApplicationTests.java
+├── target/
+├── .gitignore
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+└── README.md
